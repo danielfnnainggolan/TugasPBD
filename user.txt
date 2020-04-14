@@ -1,0 +1,11 @@
+1. Username  : felix
+   Password  :123
+   Tipe User :admin
+
+2. Username  :hizkia123
+   Password  :123
+   Tipe User :user
+
+3. Username  :rizal	
+   Password  :123
+   Tipe User :operator
