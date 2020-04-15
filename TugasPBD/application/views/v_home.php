@@ -75,7 +75,7 @@ min-height: 100%;
     <br><br><br><br><br><br><br><br><br>
   <div class="container">
 
-        <form class="well form-horizontal" action="<?=base_url()?>index.php/user/updateUser" method="POST">
+        
     <fieldset>
 
     <!-- Form Name -->
@@ -153,7 +153,7 @@ min-height: 100%;
           "<div align='center'>Add Marker</div></h4><br>Latitude : "+lat+"<br>Longitude : "+lng+"<br><br>"
           +"<form action=\"<?=base_url()?>index.php/bangunan/tambahTempat\" method=\"POST\" enctype=\"multipart/form-data\"> Nama Tempat : <input type=\"text\" id=\"nama_tempat\" name=\"nama_tempat\" required> <br><br>"
           +"Upload Gambar <br></label><input type=\"file\" id=\"gambar\" name=\"gambar\" width='50%' required><br><br>"
-          +"<input type='text' id='latitude' name='latitude' value="+lat+"><input type='text' id='longitude' name='longitude' value="+lng+"><div align='center'><input type=\"submit\" value=\"Submit\"></div></form>";
+          +"<input type='hidden' id='latitude' name='latitude' value="+lat+"><input type='hidden' id='longitude' name='longitude' value="+lng+"><div align='center'><input type=\"submit\" value=\"Submit\"></div></form>";
 
        Marker = L.marker([lat,lng],{icon:icon_bangunan}).addTo(map).bindPopup(tambah_marker, {
          maxWidth : 260,

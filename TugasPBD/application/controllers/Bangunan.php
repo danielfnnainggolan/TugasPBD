@@ -50,4 +50,34 @@ class Bangunan extends CI_Controller {
 		    redirect('page/welcome');
 		}
 	}
+
+	public function editBangunan(){
+    $id = $this->uri->segment(3);
+    $result = $this->BangunanModel->getBangunan($id);
+    $data['bangunan_nama'] = $result->bangunan_nama;
+    $data['bangunan_lat'] = $result->bangunan_lat;
+    $data['bangunan_long'] = $result->bangunan_long;
+    $data['id'] = $result->bangunan_id;
+    $this->load->view('edit_bangunan', $data);
+  }
+
+	public function updateBangunan() {
+	 $data['bangunan_nama'] = $this->input->post('bangunan_nama');
+ 	 $data['bangunan_lat'] = $this->input->post('latitude');
+ 	 $data['bangunan_long'] = $this->input->post('longitude');
+ 	 $data['id'] = $this->input->post('id');
+	 $result = $this->BangunanModel->updateBangunan($data);
+	 if($result){
+			 redirect('page/data_markers');
+	 }
+ }
+
+	 public function deleteBangunan(){
+		 $bangunan_id = $this->uri->segment(3);
+     $result = $this->BangunanModel->deleteTempat($bangunan_id);
+		if($result){
+		    redirect('page/data_markers');
+		}
+
+  }
 }

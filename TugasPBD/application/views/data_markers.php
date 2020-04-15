@@ -76,7 +76,7 @@ body {
   <div class="container">
     <div class="row">
           <br><br><br>
-          <h2><center>Data User</center></h2><br><br>
+          <h2><center>Data Markers</center></h2><br><br>
 		 </div>
 
 
@@ -102,13 +102,14 @@ body {
               <td><?php echo $bangunans->bangunan_lat?></td>
               <td><?php echo $bangunans->bangunan_long?></td>
               <td><img src="<?php echo base_url();?>assets/images/<?php echo $bangunans->bangunan_gambar?>" width:"80px" height="120px" class="center"></td>
-              <td width="90px"><a href="<?=base_url()?>page/editUser/<?php echo $bangunans->bangunan_id?>"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></td>
+              <td width="90px"><a href="<?=base_url()?>bangunan/editBangunan/<?php echo $bangunans->bangunan_id?>"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a><a href="<?=base_url()?>bangunan/deleteBangunan/<?php echo $bangunans->bangunan_id?>"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></td>
             </tr>
           <?php endforeach;?>
         </tbody>
           </table>
+        <a href="<?=base_url()?>page/exportBangunan"> Export Data to PDF</a>
         </div>
-      
+
 
 
         <!-- /.card-body -->
